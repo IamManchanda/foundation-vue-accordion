@@ -1,6 +1,6 @@
 {
-  "name": "foundation-tabs-accordion",
-  "description": "Tabs/Accordion in Foundation and Vue.js",
+  "name": "foundation-vue-accordion",
+  "description": "Accordion in Foundation and Vue.js",
   "version": "1.0.0",
   "author": "Harry Manchanda <harmanmanchanda182@gmail.com>",
   "license": "MIT",

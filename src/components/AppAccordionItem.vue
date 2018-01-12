@@ -1,6 +1,6 @@
 <template>
-  <div class="accordion-content is-active" v-if="isActive">
-    <slot></slot>
+  <div v-if="isActive">
+    <!-- No HTML Needed here! -->
   </div>
 </template>
 
@@ -9,6 +9,9 @@ export default {
   name: 'c-AppAccordionItem',
   props: {
     name: {
+      required: true,
+    },
+    content: {
       required: true,
     },
     selected: {

@@ -1,13 +1,13 @@
 <template>
   <div class="c-AppAccordion">
     <ul class="accordion">
-      <li
-        v-for="accordionItem in accordion" 
+      <li v-for="accordionItem in accordion" 
         class="accordion-item"
         :class="{ 'is-active': accordionItem.isActive }">
         <a :href="accordionItem.href" @click="selectAccordion(accordionItem)" class="accordion-title">{{ accordionItem.name }}</a>
+        <div class="accordion-content" :class="{ 'is-active': accordionItem.isActive }" v-html="accordionItem.content"></div>
       </li>
-      <slot></slot>
+      <slot></slot> <!-- Just to hold accordion item component -->
     </ul>
   </div>
   
@@ -25,11 +25,7 @@ export default {
     selectAccordion(selectedAccordion) {
       this.accordion.forEach((accordionItem) => {
         /* eslint-disable no-param-reassign */
-        if (accordionItem.name === selectedAccordion.name) {
-          accordionItem.isActive = true;
-        } else {
-          accordionItem.isActive = false;
-        }
+        accordionItem.isActive = (accordionItem.name === selectedAccordion.name);
         /* eslint-enable */
       });
     },
